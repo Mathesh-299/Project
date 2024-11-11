@@ -1,21 +1,23 @@
 import mongoose from "mongoose";
 
-const projectmodel=new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
+// Define the schema with a conventional name
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
     },
-    price:{
-        type:Number,
-        required:true
+    price: {
+        type: Number,
+        required: true
     },
-    image:{
-        type:String,
-        required:true
+    image: {
+        type: String,
+        required: true
     }
-},{
-    timestamps:true
-})
+}, {
+    timestamps: true
+});
 
-const Product=mongoose.model('Product',projectmodel);
+// Define and export the model
+const Product = mongoose.model('Product', productSchema);
 export default Product;
